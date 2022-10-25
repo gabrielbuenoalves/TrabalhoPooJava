@@ -5,7 +5,7 @@ import java.time.LocalTime;
 
 public class ContaCorrente {
     int id;
-    String clienteContaCorrente;
+    Cliente clienteContaCorrente;
     Double saldoContaCorrente;
     LocalDateTime dataCriacao;
     LocalDateTime dataModificacao;
