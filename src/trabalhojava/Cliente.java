@@ -24,6 +24,7 @@ public class Cliente {
     
     private String nome;
     private String cpf;
+    private String endereco;
     private String telefone;
     private String login;
     private String senha;
@@ -95,7 +96,5 @@ public class Cliente {
     public void setData_modificacao(LocalDateTime data_modificacao) {
         this.data_modificacao = data_modificacao;
     }
-    
-
     
 }
