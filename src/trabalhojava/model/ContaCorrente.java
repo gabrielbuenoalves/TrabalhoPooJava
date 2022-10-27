@@ -18,9 +18,6 @@ public class ContaCorrente {
                 + "\nDataModificacao=" + dataModificacao;
     }
 
-    public double saldo() {
-        return this.saldoContaCorrente;
-    }
     
     public double saque(double valor ){
         if(this.saldoContaCorrente - valor >0){
@@ -53,4 +50,44 @@ public class ContaCorrente {
         else
             return 0;
     }    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getClienteContaCorrente() {
+        return clienteContaCorrente;
+    }
+
+    public void setClienteContaCorrente(String clienteContaCorrente) {
+        this.clienteContaCorrente = clienteContaCorrente;
+    }
+
+    public double getSaldoContaCorrente() {
+        return saldoContaCorrente;
+    }
+
+    public void setSaldoContaCorrente(double saldoContaCorrente) {
+        this.saldoContaCorrente = saldoContaCorrente;
+    }
+
+    public LocalDateTime getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(LocalDateTime dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
+
+    public LocalDateTime getDataModificacao() {
+        return dataModificacao;
+    }
+
+    public void setDataModificacao(LocalDateTime dataModificacao) {
+        this.dataModificacao = dataModificacao;
+    }
 }
