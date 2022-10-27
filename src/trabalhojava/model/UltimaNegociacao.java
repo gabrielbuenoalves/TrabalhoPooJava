@@ -1,13 +1,16 @@
 package trabalhojava.model;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 
-public class Ordem {
+import java.time.LocalDateTime;
+
+/**
+ *
+ * @author gabri
+ */
+public class UltimaNegociacao {
     private int id;
-    private ContaCorrente conta;
-    private String tipoOrdem;
     private String ticker;
+    private ContaCorrente contaCompra;
+    private ContaCorrente contaVenda;
     private int quantidade;
     private double valor;
     private double velorTotal;
@@ -17,10 +20,10 @@ public class Ordem {
     
     @Override
     public String toString() {
-        return "\nOrdem" 
+        return "\nUltimaNegociacao" 
                 + "\nId = " + id 
-                + "\nConta = " + conta 
-                + "\ntipoOrdem = " + tipoOrdem 
+                + "\nContaCompra = " + contaCompra
+                + "\nContaCompra = " + contaVenda
                 + "\nticker = " + ticker 
                 + "\nquantidade=" + quantidade 
                 + "\nvalor = " + valor 
@@ -38,28 +41,28 @@ public class Ordem {
         this.id = id;
     }
 
-    public ContaCorrente getConta() {
-        return conta;
-    }
-
-    public void setConta(ContaCorrente conta) {
-        this.conta = conta;
-    }
-
-    public String getTipoOrdem() {
-        return tipoOrdem;
-    }
-
-    public void setTipoOrdem(String tipoOrdem) {
-        this.tipoOrdem = tipoOrdem;
-    }
-
     public String getTicker() {
         return ticker;
     }
 
     public void setTicker(String ticker) {
         this.ticker = ticker;
+    }
+
+    public ContaCorrente getContaCompra() {
+        return contaCompra;
+    }
+
+    public void setContaCompra(ContaCorrente contaCompra) {
+        this.contaCompra = contaCompra;
+    }
+
+    public ContaCorrente getContaVenda() {
+        return contaVenda;
+    }
+
+    public void setContaVenda(ContaCorrente contaVenda) {
+        this.contaVenda = contaVenda;
     }
 
     public int getQuantidade() {
@@ -109,6 +112,4 @@ public class Ordem {
     public void setDataModificacao(LocalDateTime dataModificacao) {
         this.dataModificacao = dataModificacao;
     }
-
-    
 }

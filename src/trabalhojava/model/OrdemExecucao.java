@@ -1,13 +1,16 @@
 package trabalhojava.model;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 
-public class Ordem {
+import java.time.LocalDateTime;
+
+/**
+ *
+ * @author gabri
+ */
+public class OrdemExecucao {
     private int id;
-    private ContaCorrente conta;
+    private ContaCorrente contaCompra;
+    private ContaCorrente contaVenda;
     private String tipoOrdem;
-    private String ticker;
     private int quantidade;
     private double valor;
     private double velorTotal;
@@ -17,11 +20,11 @@ public class Ordem {
     
     @Override
     public String toString() {
-        return "\nOrdem" 
+        return "\nOrdemExecucao" 
                 + "\nId = " + id 
-                + "\nConta = " + conta 
+                + "\nContaCompra = " + contaCompra
+                + "\nContaCompra = " + contaVenda
                 + "\ntipoOrdem = " + tipoOrdem 
-                + "\nticker = " + ticker 
                 + "\nquantidade=" + quantidade 
                 + "\nvalor = " + valor 
                 + "\nvelorTotal = " + velorTotal 
@@ -38,12 +41,20 @@ public class Ordem {
         this.id = id;
     }
 
-    public ContaCorrente getConta() {
-        return conta;
+    public ContaCorrente getContaCompra() {
+        return contaCompra;
     }
 
-    public void setConta(ContaCorrente conta) {
-        this.conta = conta;
+    public void setContaCompra(ContaCorrente contaCompra) {
+        this.contaCompra = contaCompra;
+    }
+
+    public ContaCorrente getContaVenda() {
+        return contaVenda;
+    }
+
+    public void setContaVenda(ContaCorrente contaVenda) {
+        this.contaVenda = contaVenda;
     }
 
     public String getTipoOrdem() {
@@ -52,14 +63,6 @@ public class Ordem {
 
     public void setTipoOrdem(String tipoOrdem) {
         this.tipoOrdem = tipoOrdem;
-    }
-
-    public String getTicker() {
-        return ticker;
-    }
-
-    public void setTicker(String ticker) {
-        this.ticker = ticker;
     }
 
     public int getQuantidade() {
@@ -109,6 +112,4 @@ public class Ordem {
     public void setDataModificacao(LocalDateTime dataModificacao) {
         this.dataModificacao = dataModificacao;
     }
-
-    
 }
