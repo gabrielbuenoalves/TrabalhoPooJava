@@ -1,4 +1,4 @@
-package trabalhojava;
+package trabalhojava.model;
 
 import java.time.LocalDateTime;
 
