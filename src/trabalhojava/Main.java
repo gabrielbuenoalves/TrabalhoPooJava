@@ -8,7 +8,10 @@ package trabalhojava;
 import trabalhojava.controller.ClienteController;
 import java.util.Scanner;
 import trabalhojava.model.dao.ClienteDAO;
-
+import trabalhojava.controller.ContaCorrenteController;
+import trabalhojava.model.dao.ContaCorrenteDAO;
+import trabalhojava.model.dao.AtivoDAO;
+import trabalhojava.controller.AtivoController;
 /**
  *
  * @author Chrystian
@@ -22,11 +25,12 @@ public class Main {
 
     //Declara todos DAO
     ClienteDAO clienteDAO = new ClienteDAO();
-
+    ContaCorrenteDAO contaCorrenteDAO  = new ContaCorrenteDAO();
+    AtivoDAO ativoDAO = new AtivoDAO();
     //Declara controller
     ClienteController clienteController = new ClienteController();
-    
-
+    ContaCorrenteController contaCorrenteController = new ContaCorrenteController();
+    AtivoController ativoController = new AtivoController();
     public static void main(String[] args) {
         new Main();
     }
@@ -56,6 +60,21 @@ public class Main {
                         break;
                         
                     case 2:
+                        break;
+                    case 3:
+                        contaCorrenteController.open(contaCorrenteDAO);
+                        break;
+                    case 4:
+                        ativoController.open(ativoDAO);
+                        break;
+                    case 5:
+                        ativoController.open(ativoDAO);
+                        break;
+                    case 6:
+                        ativoController.open(ativoDAO);
+                        break;
+                    case 7:
+                        ativoController.open(ativoDAO);
                         break;
                 }
             }
