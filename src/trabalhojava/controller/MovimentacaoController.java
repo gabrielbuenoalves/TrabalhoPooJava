@@ -60,7 +60,7 @@ public class MovimentacaoController{
 
                         movimentacaoUpdatado = movimentacaoView.modificarMovimentacao(movimentacaoUpdatado);
 
-                        if (movimentacaoDao.modificarCliente(movimentacaoUpdatado) == 1) {
+                        if (movimentacaoDao.modificarMovimentacao(movimentacaoUpdatado) == 1) {
                             System.out.println("Ativo modificado");
                         } else {
                             System.out.println("Ativo nao modificado");

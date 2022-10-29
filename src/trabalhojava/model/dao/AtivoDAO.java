@@ -85,7 +85,7 @@ public class AtivoDAO {
     }
 
     //Achar o aeroporto
-    public int modificarCliente(Ativo ativo) {
+    public int modificarAtivo(Ativo ativo) {
 
         for (int i = 0; i < ativoList.length; i++) {
           

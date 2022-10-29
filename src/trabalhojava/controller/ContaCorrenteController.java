@@ -52,7 +52,7 @@ public class ContaCorrenteController {
                     contaDAO.listarId();
                     System.out.println("Insira o id da cconta que deseja: ");
                     idConta = s.nextInt();
-                    ContaCorrente contaUpdatada = contaDAO.acharClienteContaCorrente(idConta);
+                    ContaCorrente contaUpdatada = contaDAO.acharContaCorrente(idConta);
 
                     if (contaUpdatada == null) {
                         System.err.println("Conta nao existe, bobao");
@@ -60,7 +60,7 @@ public class ContaCorrenteController {
 
                         contaUpdatada = contaCorrenteView.modificarContaCorrente(contaUpdatada);
 
-                        if (contaDAO.modificarCliente(contaUpdatada) == 1) {
+                        if (contaDAO.modificarContaCorrente(contaUpdatada) == 1) {
                             System.out.println("Conta modificada");
                         } else {
                             System.out.println("Conta nao modificada");
@@ -80,7 +80,7 @@ public class ContaCorrenteController {
                 case 5:
                     contaDAO.listarId();
                     idConta = s.nextInt();
-                    ContaCorrente contaCorrenteAchada = contaDAO.acharClienteContaCorrente(idConta);
+                    ContaCorrente contaCorrenteAchada = contaDAO.acharContaCorrente(idConta);
                     if (contaCorrenteAchada != null) {
                         System.out.println(contaCorrenteAchada.toString());
                     }

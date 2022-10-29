@@ -60,7 +60,7 @@ public class AtivoController {
 
                         ativoUpdatado = ativoView.modificarAtivo(ativoUpdatado);
 
-                        if (ativoDAO.modificarCliente(ativoUpdatado) == 1) {
+                        if (ativoDAO.modificarAtivo(ativoUpdatado) == 1) {
                             System.out.println("Ativo modificado");
                         } else {
                             System.out.println("Ativo nao modificado");

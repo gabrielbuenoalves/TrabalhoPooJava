@@ -70,7 +70,7 @@ public class ContaCorrenteDAO {
     }
 
     //Achar o aeroporto
-    public ContaCorrente acharClienteContaCorrente(long id) {
+    public ContaCorrente acharContaCorrente(long id) {
 
         for (int i = 0; i < contaCorrenteList.length; i++) {
             
@@ -81,8 +81,7 @@ public class ContaCorrenteDAO {
         return null;
     }
 
-    //Achar o aeroporto
-    public int modificarCliente(ContaCorrente contaCorrente) {
+    public int modificarContaCorrente(ContaCorrente contaCorrente) {
 
         for (int i = 0; i < contaCorrenteList.length; i++) {
             //Achar aeroporto

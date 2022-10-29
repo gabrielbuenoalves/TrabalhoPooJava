@@ -84,7 +84,7 @@ public class MovimentacaoDao {
     }
 
     //Achar o aeroporto
-    public int modificarCliente(MovimentacaoConta movimentacaoConta) {
+    public int modificarMovimentacao(MovimentacaoConta movimentacaoConta) {
 
         for (int i = 0; i < movimentacaoContaDao.length; i++) {
           

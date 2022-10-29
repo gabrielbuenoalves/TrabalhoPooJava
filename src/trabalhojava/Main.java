@@ -43,7 +43,7 @@ public class Main {
                 System.out.println("Insira a opção: ");
                 opc = s.nextInt();
                 switch (opc) {
-                    case 1:
+                    case 11:
                         clienteController.open(clienteDAO);
                         break;
                         
