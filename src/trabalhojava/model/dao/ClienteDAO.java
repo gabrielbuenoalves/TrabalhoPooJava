@@ -76,19 +76,42 @@ public class ClienteDAO {
         }
     }
 
-    //Achar o aeroporto
+    
     public Cliente acharCliente(long id) {
 
         for (int i = 0; i < clienteList.length; i++) {
-            //Achar aeroporto
+            
             if (clienteList[i] != null && clienteList[i].getId() == id) {
                 return clienteList[i];
             }
         }
         return null;
     }
-
-    //Achar o aeroporto
+    
+    public int isLoged(long id){
+        for (int i = 0; i < clienteList.length; i++) {
+            
+            if (clienteList[i] != null && clienteList[i].getId() == id) {
+                int logado = clienteList[i].getLogado();
+               if(logado == 1 ){
+                   return 1;
+               }
+            }
+        }
+        return 0;
+    }
+    public Cliente login(String login, String senha) {
+        for (int i = 0; i < clienteList.length; i++){
+            if(clienteList[i] != null ){
+                if(clienteList[i].getLogin().equals(login) && clienteList[i].getSenha().equals(senha));
+                clienteList[i].setLogado(1);
+                System.out.println(clienteList[i].getLogado());
+                return login(login, senha);
+            }
+        }
+            return null;
+                    
+    }
     public int modificarCliente(Cliente cliente) {
 
         for (int i = 0; i < clienteList.length; i++) {

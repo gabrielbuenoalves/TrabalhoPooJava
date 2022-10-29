@@ -45,7 +45,7 @@ public class Main {
             int opc = 0;
             while (opc != 6) {
                 
-                System.out.println("1 - Criar Conta Cliente");
+                System.out.println("1 - Cliente");
                 System.out.println("2 - Logar Cliente");
                 System.out.println("3 - Criar Conta Cliente");
                 System.out.println("4 - Comprar Ativo");
@@ -60,9 +60,10 @@ public class Main {
                         break;
                         
                     case 2:
+                        contaCorrenteController.open(contaCorrenteDAO);
                         break;
                     case 3:
-                        contaCorrenteController.open(contaCorrenteDAO);
+                        ativoController.open(ativoDAO);
                         break;
                     case 4:
                         ativoController.open(ativoDAO);
@@ -71,9 +72,6 @@ public class Main {
                         ativoController.open(ativoDAO);
                         break;
                     case 6:
-                        ativoController.open(ativoDAO);
-                        break;
-                    case 7:
                         ativoController.open(ativoDAO);
                         break;
                 }

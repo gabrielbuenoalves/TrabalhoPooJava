@@ -7,21 +7,13 @@ package trabalhojava.model;
 import java.time.LocalDateTime;
 
 /**
- *=>CRUD de cliente
-id
-nome
-endereço
-CPF
-telefone
-login
-senha
-tipoUsuario
-dataCriacao
-dataModificacao
+ * =>CRUD de cliente id nome endereço CPF telefone login senha tipoUsuario
+ * dataCriacao dataModificacao
+ *
  * @author gilbe
  */
 public class Cliente {
-    
+
     private int id;
     private String nome;
     private String cpf;
@@ -29,7 +21,8 @@ public class Cliente {
     private String telefone;
     private String login;
     private String senha;
-    private LocalDateTime data_criacao; 
+    private int logado;
+    private LocalDateTime data_criacao;
     private LocalDateTime data_modificacao;
 
 //    public Cliente(String nome, String cpf, String telefone, String login, String senha, LocalDateTime data_criacao, LocalDateTime data_modificacao) {
@@ -41,7 +34,6 @@ public class Cliente {
 //        this.data_criacao = data_criacao;
 //        this.data_modificacao = data_modificacao;
 //    }
-
     public int getId() {
         return id;
     }
@@ -49,7 +41,7 @@ public class Cliente {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public String getNome() {
         return nome;
     }
@@ -70,7 +62,6 @@ public class Cliente {
         this.endereco = endereco;
     }
 
-    
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
@@ -93,6 +84,14 @@ public class Cliente {
 
     public String getSenha() {
         return senha;
+    }
+
+    public int getLogado() {
+        return logado;
+    }
+
+    public void setLogado(int logado) {
+        this.logado = logado;
     }
 
     public void setSenha(String senha) {
@@ -119,7 +118,5 @@ public class Cliente {
     public String toString() {
         return "Cliente{" + "id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", endereco=" + endereco + ", telefone=" + telefone + ", login=" + login + ", senha=" + senha + ", data_criacao=" + data_criacao + ", data_modificacao=" + data_modificacao + '}';
     }
-    
-    
-    
+
 }

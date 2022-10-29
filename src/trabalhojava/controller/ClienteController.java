@@ -23,71 +23,76 @@ public class ClienteController {
         int opcMenu = 0;
         int idCliente = 0;
         while (opcMenu != 6) {
-            System.out.println("1 - Criar Conta");
-            System.out.println("2 - Mostar conta");
-            System.out.println("3 - Atualizar dados");
-            System.out.println("4 - Excluir");
-            System.out.println("5 - read by id");
-            System.out.println("6 - Sair");
-            System.out.println("Insere um numero ai bobao: ");
-            opcMenu = s.nextInt();
-            
-            switch (opcMenu) {
-                case 1:
-                    
-                    Cliente cliente = clienteView.insereDados();
-                    if (clienteDAO.inserirCliente(cliente) == 1) {
-                        System.out.println("Cliente inserido");
-                    } else {
-                        System.err.println("Cliente nao inserido");
-                    }
-                    ;
-                    break;
+                
+                System.out.println(clienteDAO.isLoged(idCliente));
+                System.out.println("1 - Criar Conta");
+                System.out.println("2 - Mostar conta");
+                System.out.println("3 - Atualizar dados");
+                System.out.println("4 - Excluir");
+                System.out.println("5 - read by id");
+                System.out.println("6 - Sair");
+                System.out.println("Insere um numero ai bobao: ");
+                opcMenu = s.nextInt();
 
-                case 2:
-                    clienteDAO.listar();
-                    break;
+                switch (opcMenu) {
+                    case 1:
 
-                case 3:
-                    clienteDAO.listarId();
-                    System.out.println("Insira o id do cliente que deseja: ");
-                    idCliente = s.nextInt();
-                    Cliente clienteUpdatado = clienteDAO.acharCliente(idCliente);
-
-                    if (clienteUpdatado == null) {
-                        System.err.println("Cliente nao existe, bobao");
-                    } else {
-
-                        clienteUpdatado = clienteView.modificarCliente(clienteUpdatado);
-
-                        if (clienteDAO.modificarCliente(clienteUpdatado) == 1) {
-                            System.out.println("cliente modificado");
+                        Cliente cliente = clienteView.insereDados();
+                        if (clienteDAO.inserirCliente(cliente) == 1) {
+                            System.out.println("Cliente inserido");
                         } else {
-                            System.out.println("Cliente nao modificado");
+                            System.err.println("Cliente nao inserido");
+                        }
+                        ;
+                        break;
+
+                    case 2:
+                        if (clienteDAO.isLoged(idCliente) == 1) {
+                            clienteDAO.listarId();
+                        } 
+                        break;
+
+                    case 3:
+                        clienteDAO.listarId();
+                        System.out.println("Insira o id do cliente que deseja: ");
+                        idCliente = s.nextInt();
+                        Cliente clienteUpdatado = clienteDAO.acharCliente(idCliente);
+
+                        if (clienteUpdatado == null) {
+                            System.err.println("Cliente nao existe, bobao");
+                        } else {
+
+                            clienteUpdatado = clienteView.modificarCliente(clienteUpdatado);
+
+                            if (clienteDAO.modificarCliente(clienteUpdatado) == 1) {
+                                System.out.println("cliente modificado");
+                            } else {
+                                System.out.println("Cliente nao modificado");
+                            }
+
                         }
 
-                    }
+                        break;
 
-                    break;
+                    case 4:
+                        clienteDAO.listarId();
+                        System.out.println("Insira o id do cliente que deseja: ");
+                        idCliente = s.nextInt();
+                        System.out.println(idCliente);
+                        clienteDAO.excluirCliente(idCliente);
+                        break;
+                    case 5:
+                        clienteDAO.listarId();
+                        idCliente = s.nextInt();
+                        Cliente clienteAchado = clienteDAO.acharCliente(idCliente);
+                        if (clienteAchado != null) {
+                            System.out.println(clienteAchado.toString());
+                        }
+                        break;
+                   
 
-                case 4:
-                    clienteDAO.listarId();
-                    System.out.println("Insira o id do cliente que deseja: ");
-                    idCliente = s.nextInt();
-                    System.out.println(idCliente);
-                    clienteDAO.excluirCliente(idCliente);
-                    break;
-                case 5:
-                    clienteDAO.listarId();
-                    idCliente = s.nextInt();
-                    Cliente clienteAchado = clienteDAO.acharCliente(idCliente);
-                    if (clienteAchado != null) {
-                        System.out.println(clienteAchado.toString());
-                    }
-                    break;
-            }
-
+                }
+            } 
         }
 
     }
-}
