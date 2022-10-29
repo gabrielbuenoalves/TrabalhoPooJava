@@ -1,5 +1,6 @@
 package trabalhojava.view;
 import java.time.LocalDateTime;
+import java.util.Scanner;
 import trabalhojava.model.Ordem;
 import trabalhojava.model.ContaCorrente;
 /**
@@ -7,16 +8,17 @@ import trabalhojava.model.ContaCorrente;
  * @author gabri
  */
 public class OrdemView {
+    Scanner scan = new Scanner(System.in);
     public Ordem insereDados() {
         Ordem ordem = new Ordem();
         ContaCorrente conta = new ContaCorrente();
         ordem.setConta(conta);
-        ordem.setTicker("123");
-        ordem.setEstado("");
-        ordem.setQuantidade(0);
-        ordem.setTipoOrdem("");
-        ordem.setValor(0);
-        ordem.setVelorTotal(0);
+        ordem.setTicker(scan.nextLine());
+        ordem.setEstado(scan.nextLine());
+        ordem.setQuantidade(scan.nextInt());
+        ordem.setTipoOrdem(scan.nextLine());
+        ordem.setValor(scan.nextFloat());
+        ordem.setVelorTotal(scan.nextFloat());
         ordem.setDataCriacao(LocalDateTime.now());
         ordem.setDataModificacao(LocalDateTime.now());
         return ordem;
@@ -25,12 +27,12 @@ public class OrdemView {
     public Ordem modificarOrdem(Ordem ordem) {
         ContaCorrente conta = new ContaCorrente();
         ordem.setConta(conta);
-        ordem.setTicker("123");
-        ordem.setEstado("");
-        ordem.setQuantidade(0);
-        ordem.setTipoOrdem("");
-        ordem.setValor(0);
-        ordem.setVelorTotal(0);
+        ordem.setTicker(scan.nextLine());
+        ordem.setEstado(scan.nextLine());
+        ordem.setQuantidade(scan.nextInt());
+        ordem.setTipoOrdem(scan.nextLine());
+        ordem.setValor(scan.nextFloat());
+        ordem.setVelorTotal(scan.nextFloat());
         ordem.setDataModificacao(LocalDateTime.now());
         return ordem;
     }

@@ -20,8 +20,8 @@ public class ContaCorrenteDAO {
       
         contaCorrenteList[0] = new ContaCorrente();
         contaCorrenteList[0].setId(1);
-        contaCorrenteList[0].setClienteContaCorrente("crebin do pneu");
-        contaCorrenteList[0].setSaldoContaCorrente(20.000);
+        contaCorrenteList[0].setClienteContaCorrente("Bolsa");
+        contaCorrenteList[0].setSaldoContaCorrente(00.00);
         contaCorrenteList[0].setDataCriacao(LocalDateTime.now());
         contaCorrenteList[0].setDataModificacao(LocalDateTime.now());
 

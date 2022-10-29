@@ -1,6 +1,5 @@
 package trabalhojava.view;
 import java.time.LocalDateTime;
-import trabalhojava.model.Cliente;
 import trabalhojava.model.ContaCorrente;
 /**
  *

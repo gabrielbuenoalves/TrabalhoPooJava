@@ -13,7 +13,7 @@ public class UltimaNegociacao {
     private ContaCorrente contaVenda;
     private int quantidade;
     private double valor;
-    private double velorTotal;
+    private double valorTotal;
     private String estado;
     private LocalDateTime dataCriacao;
     private LocalDateTime dataModificacao;
@@ -27,7 +27,7 @@ public class UltimaNegociacao {
                 + "\nticker = " + ticker 
                 + "\nquantidade=" + quantidade 
                 + "\nvalor = " + valor 
-                + "\nvelorTotal = " + velorTotal 
+                + "\nvelorTotal = " + valorTotal 
                 + "\nestado = " + estado 
                 + "\nDataCriacao = " + dataCriacao 
                 + "\nDataModificacao = " + dataModificacao;
@@ -82,11 +82,11 @@ public class UltimaNegociacao {
     }
 
     public double getVelorTotal() {
-        return velorTotal;
+        return valorTotal;
     }
 
     public void setVelorTotal(double velorTotal) {
-        this.velorTotal = velorTotal;
+        this.valorTotal = velorTotal;
     }
 
     public String getEstado() {

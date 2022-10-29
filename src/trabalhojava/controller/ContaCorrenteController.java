@@ -16,7 +16,7 @@ import trabalhojava.view.ContaCorrenteView;
 public class ContaCorrenteController {
 
     static Scanner s = new Scanner(System.in);
-
+    ContaCorrente contaCorrente = new ContaCorrente();
     private ContaCorrenteView contaCorrenteView = new ContaCorrenteView();
 
     public void open(ContaCorrenteDAO contaDAO) {
@@ -38,6 +38,7 @@ public class ContaCorrenteController {
                     ContaCorrente conta = contaCorrenteView.insereDados();
                     if (contaDAO.inserirContaCorrente(conta) == 1) {
                         System.out.println("Conta inserida");
+                       
                     } else {
                         System.err.println("Conta nao inserida");
                     }

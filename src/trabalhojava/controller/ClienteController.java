@@ -1,6 +1,5 @@
 package trabalhojava.controller;
 
-import java.time.LocalDateTime;
 import java.util.Scanner;
 import trabalhojava.model.Cliente;
 import trabalhojava.model.dao.ClienteDAO;
@@ -24,12 +23,12 @@ public class ClienteController {
         int opcMenu = 0;
         int idCliente = 0;
         while (opcMenu != 6) {
-            System.out.println("1 - create");
-            System.out.println("2 - read");
-            System.out.println("3 - update");
-            System.out.println("4 - delete");
+            System.out.println("1 - Criar Conta");
+            System.out.println("2 - Mostar conta");
+            System.out.println("3 - Atualizar dados");
+            System.out.println("4 - Excluir");
             System.out.println("5 - read by id");
-            System.out.println("6 - finish");
+            System.out.println("6 - Sair");
             System.out.println("Insere um numero ai bobao: ");
             opcMenu = s.nextInt();
             

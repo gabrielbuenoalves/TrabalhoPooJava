@@ -25,6 +25,7 @@ public class Main {
 
     //Declara controller
     ClienteController clienteController = new ClienteController();
+    
 
     public static void main(String[] args) {
         new Main();
@@ -39,11 +40,18 @@ public class Main {
         try {
             int opc = 0;
             while (opc != 6) {
-                System.out.println("1 - Cliente");
+                
+                System.out.println("1 - Criar Conta Cliente");
+                System.out.println("2 - Logar Cliente");
+                System.out.println("3 - Criar Conta Cliente");
+                System.out.println("4 - Comprar Ativo");
+                System.out.println("5 - Vender Ativo Cliente");
+                System.out.println("6 - Criar Conta Cliente");
+                System.out.println("7 - Imprimir extrato");
                 System.out.println("Insira a opção: ");
                 opc = s.nextInt();
                 switch (opc) {
-                    case 11:
+                    case 1:
                         clienteController.open(clienteDAO);
                         break;
                         
