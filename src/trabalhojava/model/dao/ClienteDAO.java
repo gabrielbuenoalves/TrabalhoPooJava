@@ -19,6 +19,8 @@ public class ClienteDAO {
         clienteList[0] = new Cliente();
         clienteList[0].setId(1);
         clienteList[0].setNome("crebin");
+        clienteList[0].setLogin("clebin");
+        clienteList[0].setSenha("123");
         clienteList[0].setCpf("21312312");
         clienteList[0].setEndereco("a");
         clienteList[0].setData_criacao(LocalDateTime.now());
@@ -27,6 +29,8 @@ public class ClienteDAO {
         clienteList[1] = new Cliente();
         clienteList[1].setId(2);
         clienteList[1].setNome("joaozin");
+        clienteList[1].setLogin("joao");
+        clienteList[1].setSenha("123");
         clienteList[1].setCpf("321321");
         clienteList[1].setEndereco("b");
         clienteList[1].setData_criacao(LocalDateTime.now());
@@ -76,42 +80,51 @@ public class ClienteDAO {
         }
     }
 
-    
     public Cliente acharCliente(long id) {
 
         for (int i = 0; i < clienteList.length; i++) {
-            
+
             if (clienteList[i] != null && clienteList[i].getId() == id) {
                 return clienteList[i];
             }
         }
         return null;
     }
-    
-    public int isLoged(long id){
+
+    public int isLoged(long id) {
         for (int i = 0; i < clienteList.length; i++) {
-            
+
             if (clienteList[i] != null && clienteList[i].getId() == id) {
                 int logado = clienteList[i].getLogado();
-               if(logado == 1 ){
-                   return 1;
-               }
+                if (logado == 1) {
+                    return 1;
+                }
             }
         }
         return 0;
     }
+
     public Cliente login(String login, String senha) {
-        for (int i = 0; i < clienteList.length; i++){
-            if(clienteList[i] != null ){
-                if(clienteList[i].getLogin().equals(login) && clienteList[i].getSenha().equals(senha));
-                clienteList[i].setLogado(1);
-                System.out.println(clienteList[i].getLogado());
-                return login(login, senha);
+//        for (int i = 0; i < clienteList.length; i++){
+//            if(clienteList[i] != null ){
+//                if(clienteList[i].getLogin().equals(login) && clienteList[i].getSenha().equals(senha));
+//                clienteList[i].setLogado(1);
+//                System.out.println(clienteList[i].getLogado());
+//                return login(login, senha);
+//            }
+//        }
+//            return null;
+        for (Cliente cliente : clienteList) {
+            if (cliente != null) {
+                if (cliente.getLogin().equals(login) && cliente.getSenha().equals(senha)) {
+                    return cliente;
+                }
             }
         }
-            return null;
-                    
+        return null;
+
     }
+
     public int modificarCliente(Cliente cliente) {
 
         for (int i = 0; i < clienteList.length; i++) {
